@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports Person Classifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./dropzone.min.css" />
+  </head>
+
+  <body>
+    <nav class="bg-gradient-to-r from-cyan-500 to-blue-500 text-center py-4">
+      <a href="#">Sports Person Classifier</a>
+    </nav>
+
+    <div class="container">
+      <div class="flex">
+        <div class="flex-auto card-wrapper" data-player="andreas_iniesta">
+          <div class="card border-0">
+            <div
+              class="position-relative overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Iniesta.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Andrés Iniesta</h4>
+            </div>
+          </div>
+        </div>
+        <div class="flex-auto card-wrapper" data-player="cristiano_ronaldo">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Ronaldo.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Cristiano Ronaldo</h4>
+            </div>
+          </div>
+        </div>
+        <div class="flex-auto card-wrapper" data-player="gianlugi_buffon">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Buffon.jpg"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Gianluigi Buffon</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-auto card-wrapper" data-player="luka_modric">
+          <div class="card border-0">
+            <div
+              class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image rounded-full"
+            >
+              <img
+                class="w-100 h-100"
+                src="./images/Modric.png"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h4 class="uppercase card-title">Luka Modric</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex mx-10">
+        <div>
+          <div class="flex">
+            <div class="mx-auto">
+              <form action="/file-upload" class="dropzone" id="dropzone">
+                <div class="dz-message needsclick">
+                  <img
+                    src="./images/upload.png"
+                    width="50vw"
+                    height="50vw"
+                  /><br />
+                  <span class="note needsclick"
+                    >Drop files here or click to upload</span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="flex mt-3">
+            <div class="mx-auto">
+              <button
+                id="submitBtn"
+                type="button"
+                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Classify
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="error" id="error">
+          <p>
+            Can't classify image. Classifier was not able to detect face and two
+            eyes properly
+          </p>
+        </div>
+
+        <div id="resultHolder"></div>
+        <div id="divClassTable">
+          <table id="classTable">
+            <tr>
+              <th>Player</th>
+              <th>Probability Score</th>
+            </tr>
+            <tr>
+              <td>Cristiano Ronaldo</td>
+              <td id="score_cristiano_ronaldo"></td>
+            </tr>
+            <tr>
+              <td>Luka Modric</td>
+              <td id="score_luka_modric"></td>
+            </tr>
+            <tr>
+              <td>Gianluigi Buffon</td>
+              <td id="score_gianlugi_buffon"></td>
+            </tr>
+            <tr>
+              <td>Andrés Iniesta</td>
+              <td id="score_andreas_iniesta"></td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="./dropzone.min.js"></script>
+  <script src="./app.js"></script>
+</html>
